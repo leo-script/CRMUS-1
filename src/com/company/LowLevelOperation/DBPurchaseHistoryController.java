@@ -27,7 +27,7 @@ public class DBPurchaseHistoryController extends DBController{
                     "RIGHT JOIN Order_items ON Orders.order_id = Order_items.order_id\n" +
                     "INNER JOIN Products ON Order_items.product_id = Products.product_id\n" +
                     "WHERE Orders.order_status not ilike 'canceled' \n" +
-                    "AND Customers.customer_id = '"+id+"'\n" +
+                    "AND Customers.customer_uid = '"+id+"'\n" +
                     "ORDER BY Orders.order_purchase_timestamp ASC");
             while (resultSet.next())
             {
